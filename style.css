@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  list-style: none;
+}
+
+.image:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.span:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.about p:hover {
+  background-color: #f1f1f1;
+ 
+}
+
+body {
+  display: flex;
+  justify-content: safe center;
+  align-items: center;
+  min-height: 100vh;
+}
+:root {
+  background-image: url(./images/bg-desktop.jpg);
+}
+
+.light {
+  background-image: url(./images/bg-desktop-light.jpg);
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./images/bg-desktop.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./images/sun.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./images/bg-desktop-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./images/moon-stars.svg);
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  border-radius: 77px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
+}
+
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.container {
+  border-radius: 10%;
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+  min-height: 1000px;
+  margin: 50px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
+}
+
+.container .left_side {
+  position: relative;
+  background: linear-gradient(
+    146.64deg,
+    #25aee9 -11.68%,
+    #533ce3 26.73%,
+    #c006de 91.23%
+  );
+  padding: 20px;
+}
+
+.profiletext {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profiletext h2 {
+  color: #fff;
+  font-size: 1.1em;
+  margin: 10px 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+.profiletext h2 span {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.contactinfo {
+  margin: 20px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contactinfo ul {
+  position: relative;
+}
+
+.contactinfo ul li {
+  position: relative;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.contactinfo .text {
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.contactinfo .text a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactinfo ul li .icon {
+  display: inline-block;
+  width: 30px;
+  font-size: 15px;
+  color: #03a9f4;
+}
+
+.contactinfo ul li span {
+  color: #fff;
+  font-weight: 300;
+}
+
+.contactinfo.education h5 {
+  font-size: 0.8em;
+  color: #03a9f4;
+  font-weight: 500;
+}
+
+.contactinfo.education h4:nth-child(2) {
+  color: #fff;
+  font-weight: 500;
+}
+
+.contactinfo.education h4 {
+  font-size: 0.82em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.contactinfo.language .percent {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #081921;
+  display: block;
+}
+
+.contactinfo.language .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9fa;
+}
+
+.container .right_side {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5%;
+}
+
+.about .title2 {
+  font-size: 1.3em;
+  text-align: left;
+  color: #03a9fa;
+  margin-top: 45px;
+  border-bottom: 1px solid #ccc;
+}
+
+.about .title3 {
+  font-size: 1.3em;
+  color: #03a9fa;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.about h5 {
+  color: #333;
+}
+
+p {
+  font-size: 0.86em;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.skill-competence {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.skillsinfo-left {
+  position: absolute;
+  width: 45%;
+}
+
+.skillsinfo .title4 {
+  font-size: 1.3em;
+  color: #03a9fa;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+}
+
+.skillsinfo .text {
+  position: absolute;
+  font-size: 0.8em;
+  color: #000;
+  font-weight: bold;
+}
+
+.skillsinfo .percent {
+  position: relative;
+  top: 5px;
+  left: 60px;
+  width: 55%;
+  height: 7px;
+  margin: 15px;
+  background: #081921;
+  display: block;
+}
+
+.skillsinfo .percent div {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9fa;
+  display: flex;
+}
+
+.divider {
+  position: absolute;
+  left: 41%;
+}
+
+.divider .line {
+  width: 1px;
+  height: 10em;
+  background: #ccc;
+}
+
+.contactinfo-right {
+  position: absolute;
+  right: 10%;
+  width: 45%;
+}
+
+.competenceinfo .title4 {
+  font-size: 1.3em;
+  color: #03a9fa;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.competenceinfo .text {
+  position: absolute;
+  font-size: 0.8em;
+  color: #000;
+  font-weight: bold;
+}
+
+.competenceinfo .percent {
+  position: relative;
+  top: 5px;
+  left: 45%;
+  width: 55%;
+  height: 7px;
+  margin: 15px;
+  background: #081921;
+  display: block;
+}
+
+.competenceinfo .percent div {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9fa;
+  display: flex;
+}
+
+.about:last-child {
+  margin-bottom: 0;
+}
